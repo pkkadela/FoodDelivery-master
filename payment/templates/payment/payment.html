@@ -1,0 +1,20 @@
+{% extends "food/base.html"%}
+{% load static %}
+
+{% block content%}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'payment/main.js' %}"></script>
+    <div class="content-section col-12 text-center">
+        <h2> Total Amount Payable : {{user.cart.total_price}} </h2>
+        <br>
+        <h3 style='color: grey;'>
+            Click Purchase! to proceed to payment
+        </h3>
+        <section class="section">
+        <div class="container">
+            <button class="button is-primary" id="submitBtn">Purchase!</button>
+        </div>
+        </section>
+    </div>
+
+{%endblock content%}

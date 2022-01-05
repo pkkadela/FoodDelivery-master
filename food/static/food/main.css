@@ -1,0 +1,55 @@
+body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  /* h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  } */
+  
+  ul {
+    margin: 0;
+  }
+  
+  .bg-steel {
+    background-color: #d16e1c;
+    padding: 1rem 2rem;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #e8f800;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+  
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+    
+  .food-img {
+    /* height: 125px;
+    width: 200px; */
+    object-fit: cover;
+    margin: 16px;
+
+
+  }
+  
+  .food-item{
+    background-color: #eeeeee;
+    /* border: 10px black solid; */
+    margin:10px;
+    padding: 10px;
+    overflow: hidden;
+  }

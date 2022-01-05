@@ -1,0 +1,15 @@
+{% extends "food/base.html"%}
+{% load static %}
+
+{% block content%}
+    <div class='text-center col-12'>
+    <br>
+    <h2> Your payment was cancelled :( </h2>
+    <br>
+    <br>
+    <form method='POST' action='/'>
+        {% csrf_token %}
+        <button class="button is-primary">Return to Home!</button>
+    </form>
+    </div>
+{%endblock content%}

@@ -1,0 +1,51 @@
+{% extends "food/base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="col-sm-12 content-section text-center">
+        <h2>{{user.first_name}} {{user.last_name}} - {{user.username}}<h2>
+        <br>
+        {% if user.cart.food_set.first%}
+            <h4 style='color: grey;'>
+                Total: &#8377 {{user.cart.total_price}} 
+            </h4>
+            <div class='table-responsive'> 
+                <table class='table table-bordered table-hover'>
+                    <thead class='thead-light'>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food in user.cart.food_set.all%}
+                            <tr>
+                            <th scope="row">{{food.index}}</th>
+                            <td>{{food.name}}</td>
+                            <td>{{food.price}}</td>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+            <br>
+            <h3> Enter the billing details below </h3> 
+            <br>
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class='form-group'> 
+                    <br>
+                    <button class='btn btn-info' type='submit'>Proceed</button>
+                </div>
+            </form>
+        {% else %}    
+            <h3 style='color: grey;'>
+                You have nothing in your cart. Head to the <a href={% url 'home' %}> Main Page </a> to select food.
+            </h3>
+        {%endif%}
+    </div>
+{% endblock %}
